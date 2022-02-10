@@ -1,7 +1,12 @@
-class Client implements Runnable {
+class Client extends Thread {
 
-    final int NUMBER = 5;
-    final int PERIODICITY = 2000;
+    final private int NUMBER = 5;
+    final private int PERIODICITY = 2000;
+    ThreadGroup group;
+
+    public Client(ThreadGroup group) {
+        this.group = group;
+    }
 
     @Override
     public void run() {
